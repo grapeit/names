@@ -9,7 +9,7 @@ import (
 func main() {
 	r := gin.Default()
 	r.LoadHTMLGlob("*.html")
-	r.GET("/name", func(c *gin.Context) {
+	r.GET("/", func(c *gin.Context) {
 		niceIn := c.Query("nice")
 		var nice bool
 		if niceIn == "1" {

@@ -3,4 +3,4 @@ COPY names /
 COPY names-dictionary.json /
 COPY your-name.html /
 
-ENTRYPOINT ["names"]
+ENTRYPOINT ["/names"]
