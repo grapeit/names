@@ -10,6 +10,8 @@ import (
 	"strings"
 )
 
+var openaiEndpoint = "https://api.openai.com/v1/chat/completions"
+
 type OpenaiResponse struct {
 	Choices []OpenaiChoice `json:"choices"`
 }
@@ -26,7 +28,7 @@ func getStory(name string) []string {
 	data, err := json.Marshal(gin.H{
 		"model": "gpt-3.5-turbo",
 		"messages": []gin.H{
-			gin.H{
+			{
 				"role":    "user",
 				"content": "tell a joke about " + name,
 			},
@@ -36,7 +38,7 @@ func getStory(name string) []string {
 		return []string{err.Error()}
 	}
 
-	request, err := http.NewRequest("POST", "https://api.openai.com/v1/chat/completions", bytes.NewReader(data))
+	request, err := http.NewRequest("POST", openaiEndpoint, bytes.NewReader(data))
 	if err != nil {
 		return []string{err.Error()}
 	}
