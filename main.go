@@ -9,6 +9,7 @@ import (
 func main() {
 	r := gin.Default()
 	r.LoadHTMLGlob("*.html")
+
 	r.GET("/", func(c *gin.Context) {
 		niceIn := c.Query("nice")
 		var nice bool
@@ -17,8 +18,17 @@ func main() {
 		} else if niceIn != "0" {
 			nice = rand.Intn(2) == 0
 		}
-		c.HTML(http.StatusOK, "your-name.html", gin.H{
+		c.HTML(http.StatusOK, "name.html", gin.H{
 			"name": generateRandomName(nice)})
 	})
-	r.Run()
+
+	r.GET("/story", func(c *gin.Context) {
+		name := c.Query("name")
+		c.HTML(http.StatusOK, "story.html", gin.H{
+			"name":  name,
+			"story": getStory(name),
+		})
+	})
+
+	r.Run(":80")
 }

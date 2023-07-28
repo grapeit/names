@@ -1,6 +1,6 @@
 FROM scratch
 COPY names /
 COPY names-dictionary.json /
-COPY your-name.html /
+COPY *.html /
 
 ENTRYPOINT ["/names"]
