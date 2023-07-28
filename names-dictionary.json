@@ -1,0 +1,58 @@
+{
+  "creatures": [
+    "ant",
+    "bear",
+    "bee",
+    "beetle",
+    "cat",
+    "dog",
+    "dolphin",
+    "elephant",
+    "hamster",
+    "lion",
+    "lizard",
+    "monkey",
+    "parrot",
+    "rooster",
+    "squirrel",
+    "worm"
+  ],
+  "adjectives": {
+    "nice": [
+      "amazing",
+      "awesome",
+      "beautiful",
+      "charming",
+      "cute",
+      "elegant",
+      "foxy",
+      "gorgeous",
+      "happy",
+      "joyful",
+      "lovely",
+      "nice",
+      "perfect",
+      "sexy",
+      "sublime",
+      "wonderful"
+    ],
+    "ugly": [
+      "angry",
+      "annoying",
+      "crazy",
+      "disgusting",
+      "farting",
+      "fat",
+      "horrible",
+      "lazy",
+      "naughty",
+      "noisy",
+      "old",
+      "sad",
+      "silly",
+      "stinky",
+      "tired",
+      "ugly"
+    ]
+  }
+}
