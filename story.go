@@ -11,6 +11,7 @@ import (
 )
 
 var openaiEndpoint = "https://api.openai.com/v1/chat/completions"
+var maxNameLength = 64
 
 type OpenaiResponse struct {
 	Choices []OpenaiChoice `json:"choices"`
@@ -25,6 +26,10 @@ type OpenaiMessage struct {
 }
 
 func getStory(name string) []string {
+	if len(name) > maxNameLength {
+		return []string{"Name is too long"}
+	}
+
 	data, err := json.Marshal(gin.H{
 		"model": "gpt-3.5-turbo",
 		"messages": []gin.H{
