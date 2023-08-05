@@ -68,7 +68,9 @@ func getStory(name string) []string {
 	if len(openaiResponse.Choices) == 0 {
 		return []string{"Something went wrong:("}
 	}
-
 	story := strings.FieldsFunc(openaiResponse.Choices[0].Message.Content, func(c rune) bool { return c == '\n' })
+	if len(story) == 1 {
+		story[0] = strings.Trim(story[0], "\"")
+	}
 	return story
 }
