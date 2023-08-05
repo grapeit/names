@@ -30,5 +30,12 @@ func main() {
 		})
 	})
 
+	r.GET("/runews", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "story.html", gin.H{
+			"name":  "News",
+			"story": getStory("Сренерируй заголовок похожий на новости на русском языке"),
+		})
+	})
+
 	r.Run(":80")
 }

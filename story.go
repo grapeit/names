@@ -11,7 +11,7 @@ import (
 )
 
 var openaiEndpoint = "https://api.openai.com/v1/chat/completions"
-var maxNameLength = 64
+var maxNameLength = 128
 
 type OpenaiResponse struct {
 	Choices []OpenaiChoice `json:"choices"`
